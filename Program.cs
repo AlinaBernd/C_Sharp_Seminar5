@@ -9,7 +9,7 @@ int[] CreateRandomArray(int size, int minValue, int maxValue)
     for (int i = 0; i < size; i++)
     {
         int num = new Random().Next(minValue, maxValue + 1);
-        while (num < 100 || num > 999) //  проверка, чтобы цифры были трехзначные
+        while (num < 100 || num > 999) 
         {
         num = new Random().Next(minValue, maxValue + 1);
         }
@@ -30,24 +30,24 @@ int SumOfOddNumbers(int[] array)
     int sum = 0;
 
     for (int i = 0; i < array.Length; i++)
-        if (array[i] % 2 == 0) // отбирает четные числа в массиве
-            sum += array[i];
+        if (array[i] % 2 == 0) 
+            sum ++;
 
     return sum;
 }
 
 Console.Write("Input a length of array: ");
 int m = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input a min possible value: ");
+Console.Write("Input a min possible value greater than 100: ");
 int a = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input a max possible value: ");
+Console.Write("Input a max possible value less than 1000: ");
 int b = Convert.ToInt32(Console.ReadLine());
 
 int[] myArray = CreateRandomArray(m, a, b);
 WriteArray(myArray);
 Console.WriteLine(SumOfOddNumbers(myArray));
 
-
+*/
 // Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
@@ -73,8 +73,7 @@ int SumOfOddNumbers(int[] array)
 {
     int sum = 0;
 
-    for (int i = 0; i < array.Length; i++)
-        if (array[i]%2 != 0) // отбирает нечетные числа в массиве
+    for (int i = 0; i < array.Length; i+= 2)
             sum += array[i];
 
     return sum;
